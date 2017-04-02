@@ -14,8 +14,27 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
       
+    <script>
+        function run(){
+        var rawMap = document.getElementById("mapData").value;
+        var mapArray = new Array();
+        mapArray = rawMap.split(" ");
+        document.getElementById("outputTest").innerHTML = mapArray.length;
+            
+        var canvas = document.getElementById("map").getContext('2d');
+        var imgData = canvas.createImageData(864, 635904 / 864);
+        
+        for(var i = 0; i < mapArray.length; i++)
+            imgData.data[i] = mapArray[i];
+            
+        canvas.putImageData(imgData, 0, 0);
+        }
+    </script>
   </head>
   <body>
-    
+    <input id="mapData" type="text" name="mapData">
+    <input type="submit" value="Submit" onclick="run()">
+    <div id="outputTest"></div>
+    <canvas id="map"></canvas>
   </body>
 </html>
