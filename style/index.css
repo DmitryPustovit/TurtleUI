@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300:400');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
 
 body{
     background: #EAEDED;   
@@ -17,11 +18,11 @@ canvas{
 }
 
 .header{
-    background-color: #f39c12;
+    background-color: #d35400;
     color: white;
-    font-family: 'Josefin Slab', serif;
-    font-size: 40px;
-    letter-spacing: 8px;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 34px;
+    letter-spacing: 4px;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -53,7 +54,7 @@ form span{
 }
 
 .submit{
-    background: #f39c12;
+    background: #d35400;
     border: none;
     color: white;
     font-family: 'Quicksand', sans-serif;
