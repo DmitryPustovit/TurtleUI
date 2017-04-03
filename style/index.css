@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300:400');
+
+body{
+    background: #EAEDED;   
+    margin: 0;
+    padding: 0;
+}
+
+body a{
+    text-decoration: none;
+}
+    
+canvas{
+    background: white;   
+    display: none;
+}
+
+.header{
+    background-color: #f39c12;
+    color: white;
+    font-family: 'Josefin Slab', serif;
+    font-size: 40px;
+    letter-spacing: 8px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+form
+{
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+form span{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+#mapData{
+    background-color: white;
+    border: #bdc3c7;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 34px;
+    padding: 4px;
+    width: 270px;
+}
+
+.submit{
+    background: #f39c12;
+    border: none;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 34px;
+    padding: 4px;
+    cursor: pointer;
+    text-align:center;
+}
+
+#map{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    z-index: -1;
+}
+        
+.bot{
+    color: black; 
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 400px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    bottom: 20px;
+    z-index: 4;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
