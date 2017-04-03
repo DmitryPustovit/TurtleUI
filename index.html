@@ -14,17 +14,77 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
       
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Quicksand:300');
+    body{
+        margin: 0;
+        background: #EAEDED;   
+        padding: 0;
+    }
+    canvas{
+     background: white;   
+    display: none;
+    }
+    .header{
+        font-size: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+        color: white;
+        font-weight: 300px;
+        background: #f39c12;
+    }
+    form
+    {
+        width: 400px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+        #mapData{
+         border: #bdc3c7;
+        font-size: 34px;
+            width: 270px;
+            padding: 4px;
+            font-family: 'Quicksand', sans-serif;
+            background: white;
+        }
+        #submit{
+            border: none;
+            font-size: 34px;
+            padding: 4px;
+            font-family: 'Quicksand', sans-serif;
+            background: #f39c12;
+            color: white;
+        }
+        #map{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        z-index: -1;
+        }
+    </style>
+      
     <script>
         function run(){
+        var form = document.getElementById("dataForm").style.visibility = "hidden"; 
+        document.getElementById("map").style.display = "block"; 
+        
         var rawMap = document.getElementById("mapData").value;
         var mapArray = new Array();
         mapArray = rawMap.split(" ");
-        document.getElementById("outputTest").innerHTML = mapArray.length;
+        //document.getElementById("outputTest").innerHTML = mapArray.length;
             
         var canvas = document.getElementById("map").getContext('2d');
         var imgData = canvas.createImageData(864, 635904 / 864);
             
-        document.getElementById("outputTest").innerHTML = document.getElementById("outputTest").innerHTML + "  " +  imgData.data.length;
+        //document.getElementById("outputTest").innerHTML = document.getElementById("outputTest").innerHTML + "  " +  imgData.data.length;
         for(var i = 0; i < imgData.data.length; i+= 4)
         {
             imgData.data[i] = 149;
@@ -39,8 +99,11 @@
     </script>
   </head>
   <body>
+    <div class="header">Turtle UI</div>
+    <form id="dataForm">
     <input id="mapData" type="text" name="mapData">
-    <input type="submit" value="Submit" onclick="run()">
+    <input id="submit" type="submit" value="Submit" onclick="run()">
+    </form>
     <div id="outputTest"></div>
     <canvas id="map" width="864px;" height="736px" style="context.lineWidth = 1;"></canvas>
   </body>
