@@ -87,8 +87,8 @@
             
         if( q == 2)
         {
-            jQuery.get('out.txt', function(data) {
-               console.log(data);
+            $.get('/out.txt', function(data) {
+               alert(data);
                var rawMap = data;
             });
         }
