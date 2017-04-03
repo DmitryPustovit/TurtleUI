@@ -23,9 +23,16 @@
             
         var canvas = document.getElementById("map").getContext('2d');
         var imgData = canvas.createImageData(864, 635904 / 864);
-        
-        for(var i = 0; i < mapArray.length; i++)
-            imgData.data[i] = mapArray[i];
+            
+        document.getElementById("outputTest").innerHTML = document.getElementById("outputTest").innerHTML + "  " +  imgData.data.length;
+        for(var i = 0; i < imgData.data.length; i+= 4)
+        {
+            imgData.data[i] = 149;
+            imgData.data[i+1] = 165;
+            imgData.data[i+2] = 166;
+            imgData.data[i+3] = 255 - mapArray[i/4];
+            
+        }
             
         canvas.putImageData(imgData, 0, 0);
         }
@@ -35,6 +42,6 @@
     <input id="mapData" type="text" name="mapData">
     <input type="submit" value="Submit" onclick="run()">
     <div id="outputTest"></div>
-    <canvas id="map"></canvas>
+    <canvas id="map" width="864px;" height="736px" style="context.lineWidth = 1;"></canvas>
   </body>
 </html>
