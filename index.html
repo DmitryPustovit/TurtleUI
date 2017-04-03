@@ -38,7 +38,6 @@
     form
     {
         width: 400px;
-        height: 40px;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -78,21 +77,28 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-        function run(){
-        //var form = document.getElementById("dataForm").style.visibility = "hidden"; 
-        //document.getElementById("map").style.display = "block"; 
-        
-       // if( q == 1)
-        //var rawMap = document.getElementById("mapData").value;
+        function run(q){
+        if( q == 1)
+        map(document.getElementById("mapData").value);
             
-        //if( q == 2)
-        //{
-        $.get('/out.txt', function(result) {
-            alert(result);
+        if( q == 2)
+        {
+            $.get( "out.txt", function( data ) {
+               console.log("Data!");
+            })
+            .done(function(data) {
+                map(data);
             });
-           // var rawMap = document.getElementById("mapData").value;
-        //}
-       /* var mapArray = new Array();
+            //var rawMap = document.getElementById("mapData").value;
+        }
+        }
+        
+        function map(a){
+        var form = document.getElementById("dataForm").style.visibility = "hidden"; 
+        document.getElementById("map").style.display = "block"; 
+            
+        var rawMap = a;
+        var mapArray = new Array();
         mapArray = rawMap.split(" ");
         //document.getElementById("outputTest").innerHTML = mapArray.length;
             
@@ -109,19 +115,19 @@
             
         }
             
-        canvas.putImageData(imgData, 0, 0); */
+        canvas.putImageData(imgData, 0, 0);   
         }
     </script>
   </head>
   <body>
     <div class="header">Turtle UI</div>
     <form id="dataForm">
-   <!-- <input id="mapData" type="text" name="mapData">
+    <input id="mapData" type="text" name="mapData">
     <input id="submit" type="submit" value="Submit" onclick="run(1)">
         <br/><br/><br/>
         <center><span>OR</span></center>
-        <br/><br/> -->
-        <center><input id="submit" type="submit" value="Default Map" onclick="run()"></center> 
+        <br/><br/>
+        <div id="submit" style="text-align:center;" onclick="run(2)"> Default Map </div> 
     </form>
     <div id="outputTest"></div>
     <canvas id="map" width="864px;" height="736px" style="context.lineWidth = 1;"></canvas>
