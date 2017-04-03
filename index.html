@@ -69,14 +69,29 @@
         -webkit-transform: translate(-50%, -50%);
         z-index: -1;
         }
+        
+        form span{
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 30px;
+        }
     </style>
-      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-        function run(){
+        function run(q){
         var form = document.getElementById("dataForm").style.visibility = "hidden"; 
         document.getElementById("map").style.display = "block"; 
         
+        if( q == 1)
         var rawMap = document.getElementById("mapData").value;
+            
+        if( q == 2)
+        {
+            jQuery.get('out.txt', function(data) {
+               console.log(data);
+               var rawMap = data;
+            });
+        }
         var mapArray = new Array();
         mapArray = rawMap.split(" ");
         //document.getElementById("outputTest").innerHTML = mapArray.length;
@@ -102,7 +117,11 @@
     <div class="header">Turtle UI</div>
     <form id="dataForm">
     <input id="mapData" type="text" name="mapData">
-    <input id="submit" type="submit" value="Submit" onclick="run()">
+    <input id="submit" type="submit" value="Submit" onclick="run(1)">
+        <br/><br/><br/>
+        <center><span>OR</span></center>
+        <br/><br/>
+        <center><input id="submit" type="submit" value="Default Map" onclick="run(2)"></center> 
     </form>
     <div id="outputTest"></div>
     <canvas id="map" width="864px;" height="736px" style="context.lineWidth = 1;"></canvas>
