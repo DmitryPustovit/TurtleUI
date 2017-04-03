@@ -16,10 +16,14 @@
       
     <style>
         @import url('https://fonts.googleapis.com/css?family=Quicksand:300');
+       @import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300:400');
     body{
         margin: 0;
         background: #EAEDED;   
         padding: 0;
+    }
+    body a{
+        text-decoration: none;
     }
     canvas{
      background: white;   
@@ -30,10 +34,10 @@
         padding-top: 10px;
         padding-bottom: 10px;
         text-align: center;
-        font-family: 'Quicksand', sans-serif;
+        font-family: 'Josefin Slab', serif;
         color: white;
-        font-weight: 300px;
         background: #f39c12;
+        letter-spacing: 8px;
     }
     form
     {
@@ -73,6 +77,19 @@
             text-align: center;
             font-family: 'Quicksand', sans-serif;
             font-size: 30px;
+        }
+        
+        .bot{
+            position: absolute;
+            bottom: 20px;
+            color: black; 
+            font-size: 18px;
+            font-family: 'Quicksand', sans-serif;
+            z-index: 4;
+            font-weight: 400px;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -120,7 +137,7 @@
     </script>
   </head>
   <body>
-    <div class="header">Turtle UI</div>
+    <a href="/"><div class="header">Turtle UI</div></a>
     <form id="dataForm">
     <input id="mapData" type="text" name="mapData">
     <input id="submit" type="submit" value="Submit" onclick="run(1)">
@@ -131,5 +148,6 @@
     </form>
     <div id="outputTest"></div>
     <canvas id="map" width="864px;" height="736px" style="context.lineWidth = 1;"></canvas>
+    <div class="bot">Developed by Group 5</div>
   </body>
 </html>
