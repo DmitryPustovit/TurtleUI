@@ -3,6 +3,12 @@ var express = require("express");
 var app     = express();
 var path    = require("path");
 
+var quotes = [
+  { author : 'Dmitry Pustovit', text : "In the end, are we not all Robots?"},
+  { author : 'Taylor White', text : "You know what would make it better?...Internet Explore 6..."},
+  { author : 'Brandon', text : "*Sigh*"}
+];
+
 app.use("/style", express.static(__dirname + '/style'));
 
 app.use("/scripts", express.static(__dirname + '/scripts'));
@@ -14,10 +20,8 @@ app.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-app.get('/TURTLE', function (request, response){  
-  response.render('home', {
-    name: 'John'
-  })
+app.get('/turtle', function(req, res) {
+  res.json(quotes);
 });
 
 app.listen(process.env.PORT, process.env.IP);
