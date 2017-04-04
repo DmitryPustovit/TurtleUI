@@ -5,6 +5,8 @@ function run(q){
     if( q == 2)
     {
         $.get( "./assets/out.txt", function( data ) {
+            document.getElementById("dataForm").style.visibility = "hidden"; 
+            document.getElementById("load").style.visibility = "block"; 
             console.log("Data!");
         })
         .done(function(data) {
@@ -14,7 +16,6 @@ function run(q){
 }
 
 function map(a){
-    var form = document.getElementById("dataForm").style.visibility = "hidden"; 
     
     document.getElementById("map").style.display = "block"; 
             
@@ -34,7 +35,8 @@ function map(a){
         imgData.data[i+3] = 255 - mapArray[i/4];
             
     }
-            
+    
+    document.getElementById("load").style.visibility = "hidden";         
     canvas.putImageData(imgData, 0, 0);   
 }
 

@@ -95,3 +95,17 @@ form span{
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+
+.load{
+    color: black; 
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    font-weight: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    z-index: 4;
+    display: none;
+}
