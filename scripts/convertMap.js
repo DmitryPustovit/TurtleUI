@@ -4,7 +4,7 @@ function run(q){
             
     if( q == 2)
     {
-        $.get( "/assets/out.txt", function( data ) {
+        $.get( "./assets/out.txt", function( data ) {
             console.log("Data!");
         })
         .done(function(data) {
