@@ -14,6 +14,12 @@ app.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/index.html'));
 });
 
+app.get('/TURTLE', function (request, response){  
+  response.render('home', {
+    name: 'John'
+  })
+});
+
 app.listen(process.env.PORT, process.env.IP);
 
 console.log('Server running at ' + process.env.PORT + ' ' + process.env.IP);
