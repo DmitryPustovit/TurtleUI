@@ -20,6 +20,10 @@ app.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/index.html'));
 });
 
+app.get('/test',function(req,res){
+  res.sendFile(path.join(__dirname+'/layout.html'));
+});
+
 app.get('/turtle', function(req, res) {
   res.json(quotes);
 });
