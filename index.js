@@ -20,12 +20,18 @@ app.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/index.html'));
 });
 
+//Possible Future Layout
 app.get('/test',function(req,res){
   res.sendFile(path.join(__dirname+'/layout.html'));
 });
 
+//JSON Test
 app.get('/turtle', function(req, res) {
   res.json(quotes);
+});
+
+app.get('/controller',function(req,res){
+  res.sendFile(path.join(__dirname+'/controller.html'));
 });
 
 app.listen(process.env.PORT, process.env.IP);
