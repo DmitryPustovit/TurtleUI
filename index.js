@@ -41,6 +41,7 @@ app.get('/controller',function(req,res){
 
 app.post('/control',function(req,res){
     sketchUniversalVar = req.body.int;
+    console.log(sketchUniversalVar);
     //res.send(200);
 });
 
