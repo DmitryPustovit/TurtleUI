@@ -2,6 +2,8 @@ var http = require('http');
 var express = require("express");
 var app     = express();
 var path    = require("path");
+var bodyParser = require("body-parser");
+var sketchUniversalVar = 0;
 
 var quotes = [
   { author : 'Dmitry Pustovit', text : "In the end, are we not all Robots?"},
@@ -9,10 +11,13 @@ var quotes = [
   { author : 'Brandon', text : "*Sigh*"}
 ];
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json()); 
+
 app.use("/style", express.static(__dirname + '/style'));
-
 app.use("/scripts", express.static(__dirname + '/scripts'));
-
 app.use("/assets", express.static(__dirname + '/assets'));
 
 
@@ -32,6 +37,15 @@ app.get('/turtle', function(req, res) {
 
 app.get('/controller',function(req,res){
   res.sendFile(path.join(__dirname+'/controller.html'));
+});
+
+app.post('/control',function(req,res){
+    sketchUniversalVar = req.body.int;
+    //res.send(200);
+});
+
+app.get('/command',function(req,res){
+    res.json(sketchUniversalVar);
 });
 
 app.listen(process.env.PORT, process.env.IP);
