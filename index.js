@@ -52,3 +52,8 @@ app.get('/command',function(req,res){
 app.listen(process.env.PORT, process.env.IP);
 
 console.log('Server running at ' + process.env.PORT + ' ' + process.env.IP);
+
+
+//Things I want to get done.
+//Template and or Node.JS view system rather then relying on html
+//Basic database
