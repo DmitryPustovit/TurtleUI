@@ -111,6 +111,7 @@ form span{
     left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
+    width: 358px;
 }
 
 .control{
