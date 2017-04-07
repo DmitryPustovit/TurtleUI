@@ -17,7 +17,7 @@ while x < len(var.bytes):
             else:
                 break
             
-        f.write(str(counter - x) + ' ')
+        f.write( 'A' + str(counter - x) + ' ')
         x = counter + 1
         
     elif str(var.bytes[x]) == "254":
@@ -28,7 +28,7 @@ while x < len(var.bytes):
             else:
                 break
             
-        f.write('B' + str(counter - x) + ' ')
+        f.write(str(counter - x) + ' ')
         x = counter + 1
         
 print len(var.bytes)
