@@ -13,8 +13,12 @@ body a{
 }
     
 canvas{
-    background: white;   
+    //background: white;   
     display: none;
+}
+
+#map{
+ background: white;      
 }
 
 .title{
@@ -64,13 +68,15 @@ form span{
     text-align:center;
 }
 
-#map{
+.mapS{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     z-index: -1;
+    width:864px;
+    height:736px;
 }
         
 .bot{

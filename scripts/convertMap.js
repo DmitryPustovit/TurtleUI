@@ -17,6 +17,8 @@ function map(a){
     var form = document.getElementById("dataForm").style.visibility = "hidden"; 
     
     document.getElementById("map").style.display = "block"; 
+    document.getElementById("mapPin").style.display = "block"; 
+    document.getElementById("mapPin").getContext('2d').clearRect(0,0,document.getElementById("mapPin").width,document.getElementById("mapPin").height);
             
     var rawMap = a;
     var mapArray = new Array();
@@ -35,6 +37,6 @@ function map(a){
             
     }
             
-    canvas.putImageData(imgData, 0, 0);   
+    canvas.putImageData(imgData, 0, 0);
 }
 

@@ -4,6 +4,8 @@ var app     = express();
 var path    = require("path");
 var bodyParser = require("body-parser");
 var sketchUniversalVar = 0;
+var sketchX = null;
+var sketchY = null;
 
 var quotes = [
   { author : 'Dmitry Pustovit', text : "In the end, are we not all Robots?"},
@@ -45,8 +47,20 @@ app.post('/control',function(req,res){
     //res.send(200);
 });
 
+app.post('/cord',function(req,res){
+    sketchX = req.body.x;
+    sketchY = req.body.y;
+    //sketchY = req.body.int[1];
+    //console.log(sketchX);
+    //res.send(200);
+});
+
 app.get('/command',function(req,res){
     res.json(sketchUniversalVar);
+});
+
+app.get('/getcord',function(req,res){
+    res.json([sketchX, sketchY]);
 });
 
 app.listen(process.env.PORT, process.env.IP);
